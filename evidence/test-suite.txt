@@ -1,0 +1,141 @@
+
+> claude-multiagent-code-review-starter@1.0.0 test
+> vitest run --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.17 [39m[90m/voc/work/cd14715-claude-code-classroom/project[39m
+
+ [32m✓[39m starter/tests/utils.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 143[2mms[22m[39m
+ [32m✓[39m starter/tests/schema.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [2m[90m↓[39m[22m starter/tests/integration.test.ts [2m([22m[2m1 test[22m[2m | [22m[33m1 skipped[39m[2m)[22m
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould fetch PR files from GitHub MCP
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould fetch PR files from GitHub MCP
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Code review completed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "score": 85,
+  "duration": 5,
+  "status": "success"
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould spawn all 3 subagents in parallel
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould spawn all 3 subagents in parallel
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Code review completed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "score": 85,
+  "duration": 1,
+  "status": "success"
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould aggregate results into ReviewReport
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould aggregate results into ReviewReport
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Code review completed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "score": 85,
+  "duration": 0,
+  "status": "success"
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould validate output with Zod schema
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould validate output with Zod schema
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Code review completed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "score": 85,
+  "duration": 1,
+  "status": "success"
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould reject invalid structured output
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mreviewPullRequest[2m > [22m[2mshould reject invalid structured output
+[22m[39m2026-09-27 18:09:15 [[31merror[39m]: Code review failed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "error": "Orchestrator output failed schema validation: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"string\",\n    \"path\": [\n      \"summary\",\n      \"overallScore\"\n    ],\n    \"message\": \"Expected number, received string\"\n  }\n]",
+  "status": "failed"
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mFailure handling[2m > [22m[2mshould surface SDK failures
+[22m[39m2026-09-27 18:09:15 [[32minfo[39m]: Starting code review
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1
+}
+
+[90mstdout[2m | starter/tests/orchestrator.test.ts[2m > [22m[2mCodeReviewOrchestrator[2m > [22m[2mFailure handling[2m > [22m[2mshould surface SDK failures
+[22m[39m2026-09-27 18:09:15 [[31merror[39m]: Code review failed
+{
+  "service": "code-review-system",
+  "owner": "octocat",
+  "repo": "Hello-World",
+  "prNumber": 1,
+  "error": "Orchestrator run ended with SDK failure subtype \"error_max_turns\"",
+  "status": "failed"
+}
+
+ [32m✓[39m starter/tests/orchestrator.test.ts [2m([22m[2m9 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[32m 20[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (4)[39m
+[2m      Tests [22m [1m[32m13 passed[39m[22m[2m | [22m[33m2 skipped[39m[90m (15)[39m
+[2m   Start at [22m 18:09:14
+[2m   Duration [22m 1.21s[2m (transform 522ms, setup 0ms, import 2.29s, tests 167ms, environment 0ms)[22m
+
